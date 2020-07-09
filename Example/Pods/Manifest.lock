@@ -1,0 +1,16 @@
+PODS:
+  - YHLCore (0.1.0)
+
+DEPENDENCIES:
+  - YHLCore (from `../`)
+
+EXTERNAL SOURCES:
+  YHLCore:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  YHLCore: 7afa8b25c284683302767d1b8bd6a3eaeb781ff1
+
+PODFILE CHECKSUM: fa6627b8efe03ee740f71dc870fe4f67565ef6b4
+
+COCOAPODS: 1.8.4

@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'YHLCore_Example' do
+  pod 'YHLCore', :path => '../'
+
+  target 'YHLCore_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end
