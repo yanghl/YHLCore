@@ -41,12 +41,12 @@
 		607FACEA1AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FACEB1AFB9204008FA782 /* Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
 		6AB05656E6C6A54E49A9E7EE /* Pods-YHLCore_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YHLCore_Tests.release.xcconfig"; path = "Target Support Files/Pods-YHLCore_Tests/Pods-YHLCore_Tests.release.xcconfig"; sourceTree = "<group>"; };
-		6EE1ADFB8A1595752F68C8C3 /* YHLCore.podspec */ = {isa = PBXFileReference; includeInIndex = 1; name = YHLCore.podspec; path = ../YHLCore.podspec; sourceTree = "<group>"; };
-		7628F8EEA4E087F759817599 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		6EE1ADFB8A1595752F68C8C3 /* YHLCore.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = YHLCore.podspec; path = ../YHLCore.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		7628F8EEA4E087F759817599 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		B19654A72FB5D4C321ADF2D8 /* Pods-YHLCore_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YHLCore_Tests.debug.xcconfig"; path = "Target Support Files/Pods-YHLCore_Tests/Pods-YHLCore_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		B51A86A04E952B365DFBA660 /* Pods_YHLCore_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_YHLCore_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C85F74719ED92F6E7CFCB60E /* Pods_YHLCore_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_YHLCore_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		E93F6F9E49DEDB457FC31287 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
+		E93F6F9E49DEDB457FC31287 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -156,7 +156,6 @@
 				B19654A72FB5D4C321ADF2D8 /* Pods-YHLCore_Tests.debug.xcconfig */,
 				6AB05656E6C6A54E49A9E7EE /* Pods-YHLCore_Tests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -172,6 +171,7 @@
 				607FACCD1AFB9204008FA782 /* Frameworks */,
 				607FACCE1AFB9204008FA782 /* Resources */,
 				9AB5CA67CE417FED2FACA35C /* [CP] Embed Pods Frameworks */,
+				BB3518665CE90D6BC025BFBA /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -227,6 +227,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -291,11 +292,11 @@
 			);
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-YHLCore_Example/Pods-YHLCore_Example-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/YHLCore/YHLCore.framework",
+				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YHLCore.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -322,6 +323,24 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BB3518665CE90D6BC025BFBA /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-YHLCore_Example/Pods-YHLCore_Example-resources.sh",
+				"${PODS_CONFIGURATION_BUILD_DIR}/YHLCore/YHLCore.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/YHLCore.bundle",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-YHLCore_Example/Pods-YHLCore_Example-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */

@@ -3,20 +3,37 @@
   "version": "0.1.0",
   "summary": "A short description of YHLCore.",
   "description": "TODO: Add long description of the pod here.",
-  "homepage": "https://github.com/272789124@qq.com/YHLCore",
+  "homepage": "https://github.com/yanghl/YHLCore.git",
   "license": {
     "type": "MIT",
     "file": "LICENSE"
   },
   "authors": {
-    "272789124@qq.com": "yanghl01@beantechs.cn"
+    "yanghonglei": "272789124@qq.com"
   },
   "source": {
-    "git": "https://github.com/272789124@qq.com/YHLCore.git",
+    "git": "https://github.com/yanghl/YHLCore.git",
     "tag": "0.1.0"
   },
+  "swift_versions": "5.0",
   "platforms": {
-    "ios": "8.0"
+    "ios": "10.0"
   },
-  "source_files": "YHLCore/Classes/**/*"
+  "frameworks": [
+    "UIKit",
+    "Foundation"
+  ],
+  "source_files": "YHLCore/Classes/**/*",
+  "resource_bundles": {
+    "YHLCore": [
+      "YHLCore/Assets/*{.xcassets,.bundle}",
+      "YHLCore/Classes/**/{*.storyboard,*.xib}"
+    ]
+  },
+  "dependencies": {
+    "RxSwift": [
+
+    ]
+  },
+  "swift_version": "5.0"
 }

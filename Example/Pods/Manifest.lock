@@ -1,16 +1,23 @@
 PODS:
-  - YHLCore (0.1.0)
+  - RxSwift (5.1.0)
+  - YHLCore (0.1.0):
+    - RxSwift
 
 DEPENDENCIES:
   - YHLCore (from `../`)
+
+SPEC REPOS:
+  https://gitlab.btpoc.com/app/ios/componentrepo.git:
+    - RxSwift
 
 EXTERNAL SOURCES:
   YHLCore:
     :path: "../"
 
 SPEC CHECKSUMS:
-  YHLCore: 7afa8b25c284683302767d1b8bd6a3eaeb781ff1
+  RxSwift: ad5874f24bb0dbffd1e9bb8443604e3578796c7a
+  YHLCore: 3672a1b1d1b2f4c5054aae418292e8cc36312b43
 
-PODFILE CHECKSUM: fa6627b8efe03ee740f71dc870fe4f67565ef6b4
+PODFILE CHECKSUM: 5312faf849cdd24fbd93bbe205b926089e9f179d
 
 COCOAPODS: 1.8.4
