@@ -1,5 +1,5 @@
 
-source 'https://gitlab.btpoc.com/app/ios/componentrepo.git'   # 私有库
+#source 'https://gitlab.btpoc.com/app/ios/componentrepo.git'   # 私有库
 
 use_frameworks!
 use_modular_headers!
@@ -8,9 +8,4 @@ use_modular_headers!
 target 'YHLCore_Example' do
   pod 'YHLCore', :path => '../'
 
-  target 'YHLCore_Tests' do
-    inherit! :search_paths
-
-    
-  end
 end

@@ -68,6 +68,7 @@ PODS:
   - SwiftyUserDefaults (4.0.0)
   - Toast-Swift (5.0.1)
   - "UITableView+FDTemplateLayoutCell (1.6)"
+  - URLNavigator (2.3.0)
   - YHLCore (0.1.0):
     - CryptoSwift
     - EmptyDataSet-Swift
@@ -93,6 +94,7 @@ PODS:
     - SwiftyUserDefaults
     - Toast-Swift
     - "UITableView+FDTemplateLayoutCell"
+    - URLNavigator
 
 DEPENDENCIES:
   - YHLCore (from `../`)
@@ -127,6 +129,7 @@ SPEC REPOS:
     - SwiftyUserDefaults
     - Toast-Swift
     - "UITableView+FDTemplateLayoutCell"
+    - URLNavigator
 
 EXTERNAL SOURCES:
   YHLCore:
@@ -161,8 +164,9 @@ SPEC CHECKSUMS:
   SwiftyUserDefaults: 6a1951df1daa19337862b677dd9a4b9bd4c288cd
   Toast-Swift: dfb750d4f4fbecef2f2e850a10b08e3e37043b48
   "UITableView+FDTemplateLayoutCell": 5c949b4a5059c404b442926c0e80f81d10a2d66f
-  YHLCore: cfe207c51ee4b1fd9cc16765c38bdc9f23170e41
+  URLNavigator: a2cbb9190603d1ea51c90d453240d7400b3a3ec0
+  YHLCore: 2ebdf4fe82596963af3d9efa275295dbe7db9cb6
 
-PODFILE CHECKSUM: 5312faf849cdd24fbd93bbe205b926089e9f179d
+PODFILE CHECKSUM: fe8fe62ee1c86921092502709d9dcc113ae00d92
 
 COCOAPODS: 1.8.4

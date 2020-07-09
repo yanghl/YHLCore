@@ -51,4 +51,5 @@ Pod::Spec.new do |s|
     s.dependency 'SKPhotoBrowser'
     s.dependency 'GPUImage'
     s.dependency 'RZCarPlateNoTextField'
+    s.dependency 'URLNavigator'
 end
