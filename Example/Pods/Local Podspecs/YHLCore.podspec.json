@@ -33,6 +33,75 @@
   "dependencies": {
     "RxSwift": [
 
+    ],
+    "RxCocoa": [
+
+    ],
+    "SnapKit": [
+
+    ],
+    "Kingfisher": [
+
+    ],
+    "SwiftyUserDefaults": [
+
+    ],
+    "NVActivityIndicatorView": [
+
+    ],
+    "Toast-Swift": [
+
+    ],
+    "Moya": [
+
+    ],
+    "MoyaMapper": [
+
+    ],
+    "MoyaMapper/MMCache": [
+
+    ],
+    "SwiftyJSON": [
+
+    ],
+    "R.swift": [
+
+    ],
+    "KeychainAccess": [
+
+    ],
+    "HandyJSON": [
+
+    ],
+    "SwifterSwift": [
+
+    ],
+    "EmptyDataSet-Swift": [
+
+    ],
+    "CryptoSwift": [
+
+    ],
+    "SwiftyRSA": [
+
+    ],
+    "MJRefresh": [
+
+    ],
+    "IQKeyboardManagerSwift": [
+
+    ],
+    "UITableView+FDTemplateLayoutCell": [
+
+    ],
+    "SKPhotoBrowser": [
+
+    ],
+    "GPUImage": [
+
+    ],
+    "RZCarPlateNoTextField": [
+
     ]
   },
   "swift_version": "5.0"
