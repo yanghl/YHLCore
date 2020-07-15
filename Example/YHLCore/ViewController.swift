@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import YHLCore
 
 class ViewController: UIViewController {
 
@@ -20,5 +21,10 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    @IBAction func btnClick(_ sender: Any) {
+        let vc = MallViewController()
+        self.navigationController?.pushViewController(vc)
+//        YHLNavigator.shared.push(vc)
+    }
 }
 

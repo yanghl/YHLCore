@@ -52,4 +52,5 @@ Pod::Spec.new do |s|
     s.dependency 'GPUImage'
     s.dependency 'RZCarPlateNoTextField'
     s.dependency 'URLNavigator'
+    s.dependency 'WKWebViewJavascriptBridge'
 end

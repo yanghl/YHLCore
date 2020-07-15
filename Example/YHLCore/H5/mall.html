@@ -1,0 +1,18 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <title>测试</title>
+        <style>
+           .main p{color: #666;font-size:62px;line-height: 22px;margin:8px 0;}
+       </style>
+    </head>
+    <body class="main">
+        <p>h5测试页面</p>
+    </body>
+</html>
+<script>
+    window.GWJSBridge.testfun("{\"a\":\"success\"}",function(param){
+                              alert(param["data"]["a"]);
+                              });
+    </script>

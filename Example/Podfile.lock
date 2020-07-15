@@ -7,7 +7,9 @@ PODS:
   - HandyJSON (5.0.1)
   - IQKeyboardManagerSwift (6.5.4)
   - KeychainAccess (4.1.0)
-  - Kingfisher (4.10.1)
+  - Kingfisher (5.12.0):
+    - Kingfisher/Core (= 5.12.0)
+  - Kingfisher/Core (5.12.0)
   - MJRefresh (3.4.3)
   - Moya (13.0.1):
     - Moya/Core (= 13.0.1)
@@ -39,7 +41,7 @@ PODS:
     - RZCarPlateNoTextField/KeyBoard (= 0.0.3)
   - RZCarPlateNoTextField/KeyBoard (0.0.3)
   - SKPhotoBrowser (6.1.0)
-  - SnapKit (4.2.0)
+  - SnapKit (5.0.1)
   - SwifterSwift (5.1.0):
     - SwifterSwift/AppKit (= 5.1.0)
     - SwifterSwift/CoreGraphics (= 5.1.0)
@@ -69,6 +71,7 @@ PODS:
   - Toast-Swift (5.0.1)
   - "UITableView+FDTemplateLayoutCell (1.6)"
   - URLNavigator (2.3.0)
+  - WKWebViewJavascriptBridge (1.2.0)
   - YHLCore (0.1.0):
     - CryptoSwift
     - EmptyDataSet-Swift
@@ -95,6 +98,7 @@ PODS:
     - Toast-Swift
     - "UITableView+FDTemplateLayoutCell"
     - URLNavigator
+    - WKWebViewJavascriptBridge
 
 DEPENDENCIES:
   - YHLCore (from `../`)
@@ -130,6 +134,7 @@ SPEC REPOS:
     - Toast-Swift
     - "UITableView+FDTemplateLayoutCell"
     - URLNavigator
+    - WKWebViewJavascriptBridge
 
 EXTERNAL SOURCES:
   YHLCore:
@@ -144,7 +149,7 @@ SPEC CHECKSUMS:
   HandyJSON: a19933fd2b77dd0d9df7c958d758e023720be6af
   IQKeyboardManagerSwift: 2dde0fc70110e8eac7ccce2a46fdbec6a850b414
   KeychainAccess: 445e28864fe6d3458b41fa211bcdc39890e8bd5a
-  Kingfisher: c148cd7b47ebde9989f6bc7c27dcaa79d81279a0
+  Kingfisher: dc6e0f53bb5b12c3e75bedb0e01bbd7a640eea69
   MJRefresh: 53e3e3219f204425ee6d3e62e8733d3295944cd6
   Moya: f4a4b80ff2f8a4ffc208dfb31cd91636622fee6e
   MoyaMapper: 281241601a7ead437d7b36300efe2dd190fd2ee4
@@ -157,7 +162,7 @@ SPEC CHECKSUMS:
   RxSwift: ad5874f24bb0dbffd1e9bb8443604e3578796c7a
   RZCarPlateNoTextField: e06629eab0a6ba6f701dde50e98e5eb5d6395652
   SKPhotoBrowser: 343de95d89dc7913763c5dda243cc6e606e4a168
-  SnapKit: fe8a619752f3f27075cc9a90244d75c6c3f27e2a
+  SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
   SwifterSwift: a9e8e144832638c2850b43da5feaf9598c6ad65b
   SwiftyJSON: 36413e04c44ee145039d332b4f4e2d3e8d6c4db7
   SwiftyRSA: 6e528fb1b1a87d5111c48081083b141d6d65f1cf
@@ -165,8 +170,9 @@ SPEC CHECKSUMS:
   Toast-Swift: dfb750d4f4fbecef2f2e850a10b08e3e37043b48
   "UITableView+FDTemplateLayoutCell": 5c949b4a5059c404b442926c0e80f81d10a2d66f
   URLNavigator: a2cbb9190603d1ea51c90d453240d7400b3a3ec0
-  YHLCore: 2ebdf4fe82596963af3d9efa275295dbe7db9cb6
+  WKWebViewJavascriptBridge: 43c5948c08c29b8777530d512d02eb921ca0881f
+  YHLCore: 8d89b63ffadefa2a01efe59d93bb43cf485329ef
 
-PODFILE CHECKSUM: fe8fe62ee1c86921092502709d9dcc113ae00d92
+PODFILE CHECKSUM: fbbf68eba2932adde9495067f03c8c95e31081df
 
 COCOAPODS: 1.8.4
