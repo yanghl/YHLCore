@@ -8,11 +8,11 @@
 
 Pod::Spec.new do |s|
     s.name             = 'YHLCore'
-    s.version          = '0.1.0'
+    s.version          = '0.1.1'
     s.summary          = 'A short description of YHLCore.'
     s.description      = <<-DESC
-    TODO: Add long description of the pod here.
-    DESC
+                            TODO: Add long description of the pod here.
+                        DESC
     
     s.homepage         = 'https://github.com/yanghl/YHLCore.git'
     s.license          = { :type => 'MIT', :file => 'LICENSE' }
@@ -20,11 +20,10 @@ Pod::Spec.new do |s|
     s.source           = { :git => 'https://github.com/yanghl/YHLCore.git', :tag => s.version.to_s }
     s.swift_version = '5.0'
     s.ios.deployment_target = '10.0'
-    s.frameworks = 'UIKit', 'Foundation'
     
-    s.source_files = 'YHLCore/Classes/**/*'
+    s.source_files = 'YHLCore/Classes/**/{*.swift,*.h,*.m}'
     s.resource_bundles = {
-        'YHLCore' => ['YHLCore/Assets/*{.xcassets,.bundle}', 'YHLCore/Classes/**/{*.storyboard,*.xib}']
+        'YHLCore' => ['YHLCore/Assets/**/{*}', 'YHLCore/Classes/**/{*.storyboard,*.xib}']
     }
     
     s.dependency 'RxSwift'

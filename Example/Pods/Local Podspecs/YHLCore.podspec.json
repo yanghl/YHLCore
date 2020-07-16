@@ -19,14 +19,10 @@
   "platforms": {
     "ios": "10.0"
   },
-  "frameworks": [
-    "UIKit",
-    "Foundation"
-  ],
-  "source_files": "YHLCore/Classes/**/*",
+  "source_files": "YHLCore/Classes/**/{*.swift,*.h,*.m}",
   "resource_bundles": {
     "YHLCore": [
-      "YHLCore/Assets/*{.xcassets,.bundle}",
+      "YHLCore/Assets/**/{*}",
       "YHLCore/Classes/**/{*.storyboard,*.xib}"
     ]
   },
