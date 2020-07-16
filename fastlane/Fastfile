@@ -23,7 +23,9 @@ platform :ios do
 	puts  "==#{Dir.pwd}"
 	puts  "==#{Dir.getwd}"
 
- 	git_add(path: ".")
-    	git_commit(path: ".", message: "导入一部分组件",allow_nothing_to_commit: true)
+ 	#git_add(path: ".")
+    	#git_commit(path: ".", message: "导入一部分组件",allow_nothing_to_commit: true)
+
+	push_to_git_remote(remote_branch: "master")
   end
 end
