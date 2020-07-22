@@ -1,31 +1,69 @@
-# This file contains the fastlane.tools configuration
-# You can find the documentation at https://docs.fastlane.tools
-#
-# For a list of all available actions, check out
-#
-#     https://docs.fastlane.tools/actions
-#
-# For a list of all available plugins, check out
-#
-#     https://docs.fastlane.tools/plugins/available-plugins
-#
-
-# Uncomment the line if you want fastlane to automatically update itself
-# update_fastlane
-
+require 'fileutils'
 default_platform(:ios)
 
 platform :ios do
-  desc "Description of what the lane does"
-  lane :learn do
-        podspecName = File.basename(File.expand_path("..", Dir.pwd), Dir.getwd)
-	puts  "\\:#{File.expand_path("..", Dir.pwd)}"
-	puts  "==#{Dir.pwd}"
-	puts  "==#{Dir.getwd}"
 
- 	#git_add(path: ".")
-    	#git_commit(path: ".", message: "导入一部分组件",allow_nothing_to_commit: true)
+  lane :learn do |options|
 
-	push_to_git_remote(remote_branch: "master")
+    tagNum = options[:version]
+    podspecName = podspec_name
+
+    print podspecName
+    print "adaddddd"
+    desc("删除由cocoapods生成的文件")
+    hasPods = File.exist?("../Example/Pods")
+    if  hasPods == true
+        #FileUtils.rm_rf("../Example/Pods")
+    end
+    hasSpace = File.exist?("../Example/YHLCore.xcworkspace")
+    if  hasSpace == true
+        #FileUtils.rm_rf("../Example/YHLCore.xcworkspace")
+    end
+    hasPodfile = File.exist?("../Example/Podfile.lock")
+    if  hasPodfile == true
+        #FileUtils.rm_rf("../Example/Podfile.lock")
+    end
+
+    #system 'pod repo update yanghl'
+
+    desc("重新生成项目")
+    #cocoapods( clean: true, podfile: "./Example/Podfile" )
+
+    # 修改版本号
+    #change_version(podspecName, tagNum)
+
+    pod repo_update:"今天天气不错"
+
+  end
+
+end
+
+def podspec_name
+  podspecName = File.basename(File.expand_path("..", Dir.pwd), Dir.getwd)
+  Dir.children("..").each{|x|
+    fileName = x.sub!(/\..*/,"")
+    if podspecName.casecmp? fileName
+      podspecName = fileName
+    end
+  }
+  podspecName
+end
+
+
+def change_version(podspecName, version)
+  path = "../#{podspecName}.podspec"
+
+  return unless File.exists? path
+
+  lines = IO.readlines(path).map do |line|
+    if line.include? "s.version          ="
+      line = "    s.version          = '#{version}'"
+    else
+      line
+    end
+    end
+      File.open(path, 'w') do |file|
+      file.puts lines
   end
 end
+

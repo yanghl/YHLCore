@@ -1,6 +1,0 @@
-framework module YHLCore {
-  umbrella header "YHLCore-umbrella.h"
-
-  export *
-  module * { export * }
-}

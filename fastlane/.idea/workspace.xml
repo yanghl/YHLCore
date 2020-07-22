@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="388bf50f-1323-4e6d-ac70-97660bef6caa" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../Example/Gemfile" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Example/Podfile" beforeDir="false" afterPath="$PROJECT_DIR$/../Example/Podfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Example/Podfile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../Example/Podfile.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Example/Pods/Local Podspecs/YHLCore.podspec.json" beforeDir="false" afterPath="$PROJECT_DIR$/../Example/Pods/Local Podspecs/YHLCore.podspec.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Example/Pods/Manifest.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../Example/Pods/Manifest.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Example/Pods/Pods.xcodeproj/project.pbxproj" beforeDir="false" afterPath="$PROJECT_DIR$/../Example/Pods/Pods.xcodeproj/project.pbxproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Example/Pods/Target Support Files/Pods-YHLCore_Example/Pods-YHLCore_Example-acknowledgements.markdown" beforeDir="false" afterPath="$PROJECT_DIR$/../Example/Pods/Target Support Files/Pods-YHLCore_Example/Pods-YHLCore_Example-acknowledgements.markdown" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Example/Pods/Target Support Files/Pods-YHLCore_Example/Pods-YHLCore_Example-acknowledgements.plist" beforeDir="false" afterPath="$PROJECT_DIR$/../Example/Pods/Target Support Files/Pods-YHLCore_Example/Pods-YHLCore_Example-acknowledgements.plist" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Example/Pods/Target Support Files/Pods-YHLCore_Example/Pods-YHLCore_Example-frameworks.sh" beforeDir="false" afterPath="$PROJECT_DIR$/../Example/Pods/Target Support Files/Pods-YHLCore_Example/Pods-YHLCore_Example-frameworks.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Example/Pods/Target Support Files/Pods-YHLCore_Example/Pods-YHLCore_Example.debug.xcconfig" beforeDir="false" afterPath="$PROJECT_DIR$/../Example/Pods/Target Support Files/Pods-YHLCore_Example/Pods-YHLCore_Example.debug.xcconfig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Example/Pods/Target Support Files/Pods-YHLCore_Example/Pods-YHLCore_Example.release.xcconfig" beforeDir="false" afterPath="$PROJECT_DIR$/../Example/Pods/Target Support Files/Pods-YHLCore_Example/Pods-YHLCore_Example.release.xcconfig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Example/Pods/Target Support Files/YHLCore/YHLCore-Info.plist" beforeDir="false" afterPath="$PROJECT_DIR$/../Example/Pods/Target Support Files/YHLCore/YHLCore-Info.plist" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Example/Pods/Target Support Files/YHLCore/YHLCore.xcconfig" beforeDir="false" afterPath="$PROJECT_DIR$/../Example/Pods/Target Support Files/YHLCore/YHLCore.xcconfig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Example/YHLCore.xcodeproj/project.pbxproj" beforeDir="false" afterPath="$PROJECT_DIR$/../Example/YHLCore.xcodeproj/project.pbxproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Gemfile" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../YHLCore.podspec" beforeDir="false" afterPath="$PROJECT_DIR$/../YHLCore.podspec" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Fastfile" beforeDir="false" afterPath="$PROJECT_DIR$/Fastfile" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="ProjectId" id="1ewi2T3GZ5dNiMf1BLBFUPmypAH" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+  </component>
+  <component name="RunManager">
+    <configuration name="scratch" type="RubyRunConfigurationType" factoryName="Ruby" temporary="true">
+      <RUBY_RUN_CONFIG NAME="RUBY_ARGS" VALUE="" />
+      <RUBY_RUN_CONFIG NAME="WORK DIR" VALUE="$APPLICATION_CONFIG_DIR$/scratches" />
+      <RUBY_RUN_CONFIG NAME="SHOULD_USE_SDK" VALUE="false" />
+      <RUBY_RUN_CONFIG NAME="ALTERN_SDK_NAME" VALUE="" />
+      <RUBY_RUN_CONFIG NAME="myPassParentEnvs" VALUE="true" />
+      <EXTENSION ID="BundlerRunConfigurationExtension" bundleExecEnabled="false" />
+      <EXTENSION ID="JRubyRunConfigurationExtension" NailgunExecEnabled="false" />
+      <RUBY_RUN_CONFIG NAME="SCRIPT_PATH" VALUE="$APPLICATION_CONFIG_DIR$/scratches/scratch.rb" />
+      <RUBY_RUN_CONFIG NAME="SCRIPT_ARGS" VALUE="" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Ruby.scratch" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpringUtil" SPRING_PRE_LOADER_OPTION="true" RAKE_SPRING_PRE_LOADER_OPTION="true" RAILS_SPRING_PRE_LOADER_OPTION="true" />
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="388bf50f-1323-4e6d-ac70-97660bef6caa" name="Default Changelist" comment="" />
+      <created>1595238848084</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1595238848084</updated>
+      <workItem from="1595238849629" duration="3789000" />
+      <workItem from="1595319328964" duration="1831000" />
+      <workItem from="1595323043931" duration="6813000" />
+      <workItem from="1595338784059" duration="1116000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="2" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state width="1238" height="2" key="GridCell.Tab.0.bottom" timestamp="1595337252564">
+      <screen x="-1280" y="303" width="1280" height="724" />
+    </state>
+    <state width="1238" height="2" key="GridCell.Tab.0.bottom/-1280.303.1280.724/0.23.1920.1057@-1280.303.1280.724" timestamp="1595337252564" />
+    <state width="1238" height="2" key="GridCell.Tab.0.center" timestamp="1595337252564">
+      <screen x="-1280" y="303" width="1280" height="724" />
+    </state>
+    <state width="1238" height="2" key="GridCell.Tab.0.center/-1280.303.1280.724/0.23.1920.1057@-1280.303.1280.724" timestamp="1595337252564" />
+    <state width="1238" height="2" key="GridCell.Tab.0.left" timestamp="1595337252563">
+      <screen x="-1280" y="303" width="1280" height="724" />
+    </state>
+    <state width="1238" height="2" key="GridCell.Tab.0.left/-1280.303.1280.724/0.23.1920.1057@-1280.303.1280.724" timestamp="1595337252563" />
+    <state width="1238" height="2" key="GridCell.Tab.0.right" timestamp="1595337252564">
+      <screen x="-1280" y="303" width="1280" height="724" />
+    </state>
+    <state width="1238" height="2" key="GridCell.Tab.0.right/-1280.303.1280.724/0.23.1920.1057@-1280.303.1280.724" timestamp="1595337252564" />
+  </component>
+</project>
