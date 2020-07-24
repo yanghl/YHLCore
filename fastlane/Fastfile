@@ -5,7 +5,7 @@ platform :ios do
 
   lane :learn do |options|
 
-    tagNum = options[:version]
+    tagNum = "0.1.17"
     podspecName = podspec_name
 
     # 修改版本号
