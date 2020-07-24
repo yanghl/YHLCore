@@ -8,8 +8,9 @@ platform :ios do
     tagNum = options[:version]
     podspecName = podspec_name
 
-    print podspecName
-    print "adaddddd"
+    # 修改版本号
+    change_version(podspecName, tagNum)
+
     desc("删除由cocoapods生成的文件")
     hasPods = File.exist?("../Example/Pods")
     if  hasPods == true
@@ -27,13 +28,12 @@ platform :ios do
     #system 'pod repo update yanghl'
 
     desc("重新生成项目")
-    #cocoapods( clean: true, podfile: "./Example/Podfile" )
+    cocoapods( clean: true, podfile: "./Example/Podfile" )
 
-    # 修改版本号
-    #change_version(podspecName, tagNum)
+   git_add(path: ".")
+   git_commit(path: ".", message: "upgrade repo",allow_nothing_to_commit: true)
 
-    pod repo_update:"今天天气不错"
-
+    push_to_git_remote(remote_branch: "master")
   end
 
 end
