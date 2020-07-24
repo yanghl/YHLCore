@@ -9,6 +9,7 @@ platform :ios do
     podspecName = podspec_name
 
     # 修改版本号
+    puts "修改之前===11===#{tagNum}"
     change_version(podspecName, tagNum)
 
     desc("删除由cocoapods生成的文件")
