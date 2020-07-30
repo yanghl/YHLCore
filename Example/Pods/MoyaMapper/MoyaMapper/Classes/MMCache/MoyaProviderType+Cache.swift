@@ -6,6 +6,7 @@
 //
 
 import Moya
+import Result
 
 public extension MoyaProviderType {
     /**
@@ -29,24 +30,19 @@ public extension MoyaProviderType {
         let cache = MMCache.shared.fetchResponseCache(target: target)
         
         if alwaysFetchCache && cache != nil {
-            completion(.success(cache!))
+            completion(Result(value: cache!))
         } else {
             if MMCache.shared.isNoRecord(target, cacheType: cacheType) {
                 MMCache.shared.record(target)
                 if cache != nil {
-                    completion(.success(cache!))
+                    completion(Result(value: cache!))
                 }
             }
         }
         
         return self.request(target, callbackQueue: callbackQueue, progress: progress) { result in
-            switch result {
-            case let .success(response):
-                if let resp = try? response.filterSuccessfulStatusCodes() {
-                    // 更新缓存
-                    MMCache.shared.cacheResponse(resp, target: target)
-                }
-            default: break
+            if let resp = try? result.value?.filterSuccessfulStatusCodes() { // 更新缓存
+                MMCache.shared.cacheResponse(resp, target: target)
             }
             completion(result)
         }

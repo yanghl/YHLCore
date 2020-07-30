@@ -14,8 +14,8 @@ import Foundation
 import UIKit
 #endif
 
-#if canImport(AppKit)
-import AppKit
+#if canImport(Cocoa)
+import Cocoa
 #endif
 
 #if canImport(CoreGraphics)
@@ -31,17 +31,9 @@ public extension String {
     ///		"SGVsbG8gV29ybGQh".base64Decoded = Optional("Hello World!")
     ///
     var base64Decoded: String? {
-        let remainder = count % 4
-
-        var padding = ""
-        if remainder > 0 {
-            padding = String(repeating: "=", count: 4 - remainder)
-        }
-
-        guard let data = Data(base64Encoded: self + padding,
-                              options: .ignoreUnknownCharacters) else { return nil }
-
-        return String(data: data, encoding: .utf8)
+        // https://github.com/Reza-Rg/Base64-Swift-Extension/blob/master/Base64.swift
+        guard let decodedData = Data(base64Encoded: self) else { return nil }
+        return String(data: decodedData, encoding: .utf8)
     }
     #endif
 
@@ -247,7 +239,11 @@ public extension String {
     #endif
 
     #if canImport(Foundation)
-    /// SwifterSwift: Check if string is a valid Swift number. Note: In North America, "." is the decimal separator, while in many parts of Europe "," is used,
+    /// SwifterSwift: Check if string is a valid Swift number.
+    ///
+    /// Note:
+    /// In North America, "." is the decimal separator,
+    /// while in many parts of Europe "," is used,
     ///
     ///		"123".isNumeric -> true
     ///     "1.3".isNumeric -> true (en_US)
@@ -257,7 +253,7 @@ public extension String {
     var isNumeric: Bool {
         let scanner = Scanner(string: self)
         scanner.locale = NSLocale.current
-        #if os(Linux) || targetEnvironment(macCatalyst)
+        #if os(Linux)
         return scanner.scanDecimal() != nil && scanner.isAtEnd
         #else
         return scanner.scanDecimal(nil) && scanner.isAtEnd
@@ -445,7 +441,7 @@ public extension String {
 public extension String {
 
     #if canImport(Foundation)
-    /// SwifterSwift: Float value from string (if applicable).
+    /// Float value from string (if applicable).
     ///
     /// - Parameter locale: Locale (default is Locale.current)
     /// - Returns: Optional Float value from given string.
@@ -458,7 +454,7 @@ public extension String {
     #endif
 
     #if canImport(Foundation)
-    /// SwifterSwift: Double value from string (if applicable).
+    /// Double value from string (if applicable).
     ///
     /// - Parameter locale: Locale (default is Locale.current)
     /// - Returns: Optional Double value from given string.
@@ -471,7 +467,7 @@ public extension String {
     #endif
 
     #if canImport(CoreGraphics) && canImport(Foundation)
-    /// SwifterSwift: CGFloat value from string (if applicable).
+    /// CGFloat value from string (if applicable).
     ///
     /// - Parameter locale: Locale (default is Locale.current)
     /// - Returns: Optional CGFloat value from given string.
@@ -601,24 +597,28 @@ public extension String {
         return self[self.index(startIndex, offsetBy: index)]
     }
 
-    /// SwifterSwift: Safely subscript string within a given range.
+    /// SwifterSwift: Safely subscript string within a half-open range.
     ///
-    ///        "Hello World!"[safe: 6..<11] -> "World"
-    ///        "Hello World!"[safe: 21..<110] -> nil
+    ///		"Hello World!"[safe: 6..<11] -> "World"
+    ///		"Hello World!"[safe: 21..<110] -> nil
     ///
-    ///        "Hello World!"[safe: 6...11] -> "World!"
-    ///        "Hello World!"[safe: 21...110] -> nil
-    ///
-    /// - Parameter range: Range expression.
-    subscript<R>(safe range: R) -> String? where R: RangeExpression, R.Bound == Int {
-        let range = range.relative(to: Int.min..<Int.max)
-        guard range.lowerBound >= 0,
-            let lowerIndex = index(startIndex, offsetBy: range.lowerBound, limitedBy: endIndex),
-            let upperIndex = index(startIndex, offsetBy: range.upperBound, limitedBy: endIndex) else {
-                return nil
-        }
-
+    /// - Parameter range: Half-open range.
+    subscript(safe range: CountableRange<Int>) -> String? {
+        guard let lowerIndex = index(startIndex, offsetBy: max(0, range.lowerBound), limitedBy: endIndex) else { return nil }
+        guard let upperIndex = index(lowerIndex, offsetBy: range.upperBound - range.lowerBound, limitedBy: endIndex) else { return nil }
         return String(self[lowerIndex..<upperIndex])
+    }
+
+    /// SwifterSwift: Safely subscript string within a closed range.
+    ///
+    ///		"Hello World!"[safe: 6...11] -> "World!"
+    ///		"Hello World!"[safe: 21...110] -> nil
+    ///
+    /// - Parameter range: Closed range.
+    subscript(safe range: ClosedRange<Int>) -> String? {
+        guard let lowerIndex = index(startIndex, offsetBy: max(0, range.lowerBound), limitedBy: endIndex) else { return nil }
+        guard let upperIndex = index(lowerIndex, offsetBy: range.upperBound - range.lowerBound, limitedBy: endIndex) else { return nil }
+        return String(self[lowerIndex...upperIndex])
     }
 
     #if os(iOS) || os(macOS)
@@ -1052,17 +1052,6 @@ public extension String {
         return String(dropLast(suffix.count))
     }
 
-    /// SwifterSwift: Adds prefix to the string.
-    ///
-    ///     "www.apple.com".withPrefix("https://") -> "https://www.apple.com"
-    ///
-    /// - Parameter prefix: Prefix to add to the string.
-    /// - Returns: The string with the prefix prepended.
-    func withPrefix(_ prefix: String) -> String {
-        // https://www.hackingwithswift.com/articles/141/8-useful-swift-extensions
-        guard !hasPrefix(prefix) else { return self }
-        return prefix + self
-    }
 }
 
 // MARK: - Initializers
@@ -1112,7 +1101,7 @@ public extension String {
     private typealias Font = UIFont
     #endif
 
-    #if canImport(AppKit) && !targetEnvironment(macCatalyst)
+    #if canImport(Cocoa)
     private typealias Font = NSFont
     #endif
 
@@ -1144,12 +1133,22 @@ public extension String {
     }
     #endif
 
-    #if canImport(AppKit) || canImport(UIKit)
+    #if canImport(UIKit)
     /// SwifterSwift: Add color to string.
     ///
     /// - Parameter color: text color.
     /// - Returns: a NSAttributedString versions of string colored with given color.
-    func colored(with color: Color) -> NSAttributedString {
+    func colored(with color: UIColor) -> NSAttributedString {
+        return NSMutableAttributedString(string: self, attributes: [.foregroundColor: color])
+    }
+    #endif
+
+    #if canImport(Cocoa)
+    /// SwifterSwift: Add color to string.
+    ///
+    /// - Parameter color: text color.
+    /// - Returns: a NSAttributedString versions of string colored with given color.
+    func colored(with color: NSColor) -> NSAttributedString {
         return NSMutableAttributedString(string: self, attributes: [.foregroundColor: color])
     }
     #endif

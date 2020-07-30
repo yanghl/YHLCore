@@ -9,7 +9,7 @@
 #import "RZCarPlateNoKeyBoardViewModel.h"
 
 NSString * const rz_province = @"京津沪渝冀豫云辽黑湘皖鲁新苏浙赣鄂桂甘晋蒙陕吉闽贵粤青藏川宁琼使领";
-NSString * const rz_province_Regex = @"[京津沪渝冀豫云辽黑湘皖鲁新苏浙赣鄂桂甘晋蒙陕吉闽贵粤青藏川宁琼使领A-Z]";
+NSString * const rz_province_Regex = @"[京津沪渝冀豫云辽黑湘皖鲁新苏浙赣鄂桂甘晋蒙陕吉闽贵粤青藏川宁琼使领]";
 NSString * const rz_province_code_Regex = @"[A-Z]";
 NSString * const rz_plateNo_code_Regex = @"[A-Z0-9]";
 NSString * const rz_plateNo_code_end_Regx = @"[A-Z0-9挂学警港澳]";
@@ -48,7 +48,11 @@ NSString * const rz_plateNo_code_end_Regx = @"[A-Z0-9挂学警港澳]";
                     model.text = @"A";
                 } else if ([obj isEqualToString:@"delete"]) {
                     model.rz_isDeleteBtnType = YES;
-                    model.image = [UIImage imageNamed:@"RZCarPlateNoResource.bundle/rzDelete"];
+                    NSBundle *bundle = [NSBundle bundleForClass:self.class];
+                    NSURL *url = [bundle URLForResource:@"RZCarPlateNoResource" withExtension:@"bundle"];
+                    NSBundle *imageBundle = [NSBundle bundleWithURL:url];
+                    UIImage *image = [UIImage imageNamed:@"rzDelete" inBundle:imageBundle compatibleWithTraitCollection:nil];
+                    model.image = image;
                 } else {
                     model.text = obj;
                 }
@@ -79,7 +83,13 @@ NSString * const rz_plateNo_code_end_Regx = @"[A-Z0-9挂学警港澳]";
                     model.text = @"省";
                 } else if ([obj isEqualToString:@"delete"]) {
                     model.rz_isDeleteBtnType = YES;
-                    model.image = [UIImage imageNamed:@"RZCarPlateNoResource.bundle/rzDelete"];
+           
+                    NSBundle *bundle = [NSBundle bundleForClass:self.class];
+                    NSURL *url = [bundle URLForResource:@"RZCarPlateNoResource" withExtension:@"bundle"];
+                    NSBundle *imageBundle = [NSBundle bundleWithURL:url];
+                    UIImage *image = [UIImage imageNamed:@"rzDelete" inBundle:imageBundle compatibleWithTraitCollection:nil];
+                    model.image = image;
+                    
                 } else {
                     model.text = obj;
                 }

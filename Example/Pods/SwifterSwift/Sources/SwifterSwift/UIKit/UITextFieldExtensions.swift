@@ -18,13 +18,13 @@ public extension UITextField {
     /// - password: UITextField is used to enter passwords.
     /// - generic: UITextField is used to enter generic text.
     enum TextType {
-        /// SwifterSwift: UITextField is used to enter email addresses.
+        /// UITextField is used to enter email addresses.
         case emailAddress
 
-        /// SwifterSwift: UITextField is used to enter passwords.
+        /// UITextField is used to enter passwords.
         case password
 
-        /// SwifterSwift: UITextField is used to enter generic text.
+        /// UITextField is used to enter generic text.
         case generic
     }
 

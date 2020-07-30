@@ -17,10 +17,10 @@ public extension UIView {
     /// - horizontal: Shake left and right.
     /// - vertical: Shake up and down.
     enum ShakeDirection {
-        /// SwifterSwift: Shake left and right.
+        /// Shake left and right.
         case horizontal
 
-        /// SwifterSwift: Shake up and down.
+        /// Shake up and down.
         case vertical
     }
 
@@ -29,10 +29,10 @@ public extension UIView {
     /// - degrees: degrees.
     /// - radians: radians.
     enum AngleUnit {
-        /// SwifterSwift: degrees.
+        /// degrees.
         case degrees
 
-        /// SwifterSwift: radians.
+        /// radians.
         case radians
     }
 
@@ -43,16 +43,16 @@ public extension UIView {
     /// - easeOut: easeOut animation.
     /// - easeInOut: easeInOut animation.
     enum ShakeAnimationType {
-        /// SwifterSwift: linear animation.
+        /// linear animation.
         case linear
 
-        /// SwifterSwift: easeIn animation.
+        /// easeIn animation.
         case easeIn
 
-        /// SwifterSwift: easeOut animation.
+        /// easeOut animation.
         case easeOut
 
-        /// SwifterSwift: easeInOut animation.
+        /// easeInOut animation.
         case easeInOut
     }
 
@@ -111,7 +111,7 @@ public extension UIView {
 
     /// SwifterSwift: Check if view is in RTL format.
     var isRightToLeft: Bool {
-        if #available(tvOS 10.0, *) {
+        if #available(iOS 10.0, *, tvOS 10.0, *) {
             return effectiveUserInterfaceLayoutDirection == .rightToLeft
         } else {
             return false
@@ -203,6 +203,7 @@ public extension UIView {
         }
     }
 
+    // swiftlint:disable identifier_name
     /// SwifterSwift: x origin of view.
     var x: CGFloat {
         get {
@@ -212,7 +213,9 @@ public extension UIView {
             frame.origin.x = newValue
         }
     }
+    // swiftlint:enable identifier_name
 
+    // swiftlint:disable identifier_name
     /// SwifterSwift: y origin of view.
     var y: CGFloat {
         get {
@@ -222,6 +225,7 @@ public extension UIView {
             frame.origin.y = newValue
         }
     }
+    // swiftlint:enable identifier_name
 
 }
 
@@ -329,7 +333,11 @@ public extension UIView {
         gestureRecognizers?.forEach(removeGestureRecognizer)
     }
 
-    /// SwifterSwift: Attaches gesture recognizers to the view. Attaching gesture recognizers to a view defines the scope of the represented gesture, causing it to receive touches hit-tested to that view and all of its subviews. The view establishes a strong reference to the gesture recognizers.
+    /// SwifterSwift: Attaches gesture recognizers to the view.
+    ///
+    /// Attaching gesture recognizers to a view defines the scope of the represented
+    /// gesture, causing it to receive touches hit-tested to that view and all of its
+    /// subviews. The view establishes a strong reference to the gesture recognizers.
     ///
     /// - Parameter gestureRecognizers: The array of gesture recognizers to be added to the view.
     func addGestureRecognizers(_ gestureRecognizers: [UIGestureRecognizer]) {
@@ -338,7 +346,9 @@ public extension UIView {
         }
     }
 
-    /// SwifterSwift: Detaches gesture recognizers from the receiving view. This method releases gestureRecognizers in addition to detaching them from the view.
+    /// SwifterSwift: Detaches gesture recognizers from the receiving view.
+    ///
+    /// This method releases gestureRecognizers in addition to detaching them from the view.
     ///
     /// - Parameter gestureRecognizers: The array of gesture recognizers to be removed from the view.
     func removeGestureRecognizers(_ gestureRecognizers: [UIGestureRecognizer]) {

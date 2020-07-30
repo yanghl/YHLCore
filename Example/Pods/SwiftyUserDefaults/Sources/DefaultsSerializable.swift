@@ -26,10 +26,8 @@ import Foundation
 
 public protocol DefaultsSerializable {
     // swiftlint:disable:next type_name
-    typealias T = Bridge.T
-    associatedtype Bridge: DefaultsBridge
-    associatedtype ArrayBridge: DefaultsBridge
+    associatedtype T
 
-    static var _defaults: Bridge { get }
-    static var _defaultsArray: ArrayBridge { get }
+    static var _defaults: DefaultsBridge<T> { get }
+    static var _defaultsArray: DefaultsBridge<[T]> { get }
 }

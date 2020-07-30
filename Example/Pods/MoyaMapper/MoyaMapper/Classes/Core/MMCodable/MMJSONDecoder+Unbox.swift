@@ -361,7 +361,7 @@ extension _MMJSONDecoder {
     func unboxModable<T : Decodable>(_ value: Any, as type: T.Type) throws -> T? {
         guard !(value is NSNull) else { return nil }
         let TYPE = T.self as! Modelable.Type
-        let _model = TYPE.init()
+        var _model = TYPE.init()
         guard let dict = value as? Dictionary<String, Any> else {
             self.storage.push(container: value)
             defer { self.storage.popContainer() }

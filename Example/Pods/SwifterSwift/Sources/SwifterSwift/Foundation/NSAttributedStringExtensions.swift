@@ -13,8 +13,8 @@ import Foundation
 import UIKit
 #endif
 
-#if canImport(AppKit)
-import AppKit
+#if canImport(Cocoa)
+import Cocoa
 #endif
 
 // MARK: - Properties
@@ -75,12 +75,22 @@ public extension NSAttributedString {
     }
     #endif
 
-    #if canImport(AppKit) || canImport(UIKit)
+    #if os(macOS)
     /// SwifterSwift: Add color to NSAttributedString.
     ///
     /// - Parameter color: text color.
     /// - Returns: a NSAttributedString colored with given color.
-    func colored(with color: Color) -> NSAttributedString {
+    func colored(with color: NSColor) -> NSAttributedString {
+        return applying(attributes: [.foregroundColor: color])
+    }
+    #endif
+
+    #if canImport(UIKit)
+    /// SwifterSwift: Add color to NSAttributedString.
+    ///
+    /// - Parameter color: text color.
+    /// - Returns: a NSAttributedString colored with given color.
+    func colored(with color: UIColor) -> NSAttributedString {
         return applying(attributes: [.foregroundColor: color])
     }
     #endif
@@ -91,12 +101,9 @@ public extension NSAttributedString {
     /// - Parameters:
     ///   - attributes: Dictionary of attributes
     ///   - pattern: a regular expression to target
-    ///   - options: The regular expression options that are applied to the expression during matching. See NSRegularExpression.Options for possible values.
     /// - Returns: An NSAttributedString with attributes applied to substrings matching the pattern
-    func applying(attributes: [NSAttributedString.Key: Any],
-                  toRangesMatching pattern: String,
-                  options: NSRegularExpression.Options = []) -> NSAttributedString {
-        guard let pattern = try? NSRegularExpression(pattern: pattern, options: options) else { return self }
+    func applying(attributes: [NSAttributedString.Key: Any], toRangesMatching pattern: String) -> NSAttributedString {
+        guard let pattern = try? NSRegularExpression(pattern: pattern, options: []) else { return self }
 
         let matches = pattern.matches(in: string, options: [], range: NSRange(0..<length))
         let result = NSMutableAttributedString(attributedString: self)

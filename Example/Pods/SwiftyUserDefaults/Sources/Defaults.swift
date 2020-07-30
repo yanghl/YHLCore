@@ -29,10 +29,10 @@ import Foundation
 /// **Pro-Tip:** If you want to use shared user defaults, just
 ///  redefine this global shortcut in your app target, like so:
 ///  ~~~
-///  var Defaults = DefaultsAdapter(defaults: UserDefaults(suiteName: "com.my.app")!, keyStore: DefaultsKeys())
+///  var Defaults = UserDefaults(suiteName: "com.my.app")!
 ///  ~~~
 
-public var Defaults = DefaultsAdapter<DefaultsKeys>(defaults: .standard, keyStore: .init())
+public let Defaults = UserDefaults.standard
 
 public extension UserDefaults {
 
@@ -68,7 +68,7 @@ internal extension UserDefaults {
 
         return try? JSONDecoder().decode(T.self, from: decodableData)
     }
-
+    
     /// Encodes passed `encodable` and saves the resulting data into the user defaults for the key `key`.
     /// Any error encoding will result in an assertion failure.
     func set<T: Encodable>(encodable: T, forKey key: String) {
@@ -78,5 +78,5 @@ internal extension UserDefaults {
         } catch {
             assertionFailure("Failure encoding encodable of type \(T.self): \(error.localizedDescription)")
         }
-    }
+    }    
 }

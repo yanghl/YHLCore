@@ -13,10 +13,6 @@ class GWDemoViewController: GWRefreshTableViewController {
     var isValidScroll = false
     var vcCanScroll = false
     
-    
-    override func headerRefreshing() {
-        
-    }
 }
 
 extension GWDemoViewController {

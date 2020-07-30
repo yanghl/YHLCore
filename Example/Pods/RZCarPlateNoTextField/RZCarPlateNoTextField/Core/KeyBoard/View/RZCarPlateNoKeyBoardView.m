@@ -61,7 +61,7 @@
 - (void)layoutSubviews {
     [super layoutSubviews];
     
-    self.frame = CGRectMake(0, 0, rz_kScreenWidth, self.rz_cellHeight * 4 + rz_kSafeBottomMargin + 10);
+    self.frame = CGRectMake(0, 44, rz_kScreenWidth, self.rz_cellHeight * 4 + rz_kSafeBottomMargin + 10);
     self.collectionView.frame =  CGRectMake(0, 0, rz_kScreenWidth, self.rz_cellHeight * 4 + 10);
     [self.collectionView reloadData];
 }
@@ -127,7 +127,7 @@
     }
     if (self.rz_keyboardEditing) {
         self.rz_keyboardEditing(model.rz_isDeleteBtnType, model.text);
-    }  
+    }
 }
 
 @end

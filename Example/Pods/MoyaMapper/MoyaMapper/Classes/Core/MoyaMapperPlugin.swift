@@ -7,6 +7,7 @@
 //
 
 import Moya
+import Result
 
 public struct MoyaMapperPlugin: PluginType {
     var parameter: ModelableParameterType
@@ -30,26 +31,26 @@ public struct MoyaMapperPlugin: PluginType {
 
          应用场景：空白页提示加载失败
          */
-        switch result {
-        case let .failure(error):
-            if transformError {
-                // 捕捉设备问题，如 网络不可达
-                let response = failResponse(
-                    statusCode: MMStatusCode.loadFail.rawValue,
-                    errorMsg: error.localizedDescription
-                )
-                return .success(response)
-            }
-        case let .success(response):
-            // 捕捉其它问题，如 400
-            guard let resp = try?
-                response.filterSuccessfulStatusCodes() else {
-                return .success(failResponse(statusCode: response.statusCode, errorMsg: "\(response.statusCode)"))
-            }
-            resp.setNetParameter(parameter)
-            return .success(resp)
+        if transformError && result.error != nil {
+            // 捕捉设备问题，如 网络不可达
+            let response = failResponse(
+                statusCode: MMStatusCode.loadFail.rawValue,
+                errorMsg: result.error!.localizedDescription
+            )
+            return Result(value: response)
         }
-        return result
+        
+        guard let response = result.value else { return result }
+        
+        // 捕捉其它问题，如 400
+        guard let resp = try? response.filterSuccessfulStatusCodes() else {
+            return Result(value: failResponse(
+                statusCode: response.statusCode,
+                errorMsg: result.error?.localizedDescription ?? "\(response.statusCode)"
+            ))
+        }
+        resp.setNetParameter(parameter)
+        return Result(value: resp)
     }
     
     fileprivate func failResponse(

@@ -32,20 +32,6 @@ public extension URL {
 
 }
 
-// MARK: - Initializers
-public extension URL {
-
-    /// SwifterSwift: Initializes an `URL` object with a base URL and a relative string. If `string` was malformed, returns `nil`.
-    /// - Parameters:
-    ///   - string: The URL string with which to initialize the `URL` object. Must conform to RFC 2396. `string` is interpreted relative to `url`.
-    ///   - url: The base URL for the `URL` object.
-    init?(string: String?, relativeTo url: URL? = nil) {
-        guard let string = string else { return nil }
-        self.init(string: string, relativeTo: url)
-    }
-
-}
-
 // MARK: - Methods
 public extension URL {
 
@@ -137,7 +123,7 @@ public extension URL {
 public extension URL {
 
     #if os(iOS) || os(tvOS)
-    /// SwifterSwift: Generate a thumbnail image from given url. Returns nil if no thumbnail could be created. This function may take some time to complete. It's recommended to dispatch the call if the thumbnail is not generated from a local resource.
+    /// Generate a thumbnail image from given url. Returns nil if no thumbnail could be created. This function may take some time to complete. It's recommended to dispatch the call if the thumbnail is not generated from a local resource.
     ///
     ///     var url = URL(string: "https://video.golem.de/files/1/1/20637/wrkw0718-sd.mp4")!
     ///     var thumbnail = url.thumbnail()

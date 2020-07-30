@@ -15,20 +15,12 @@ func visibleViewHeight() -> CGFloat {
 }
 
 class GWDemoCellModel: GWTableViewCellModel {
-    var vc:UIViewController
-    init(vc:UIViewController) {
+    var vc:UIViewController!
+    convenience init(vc:UIViewController) {
+        self.init()
         self.vc = vc
-        super.init()
         self.className   = GWDemoTableViewCell.self
         self.cacheHeight = visibleViewHeight()
-    }
-    
-    required init() {
-        fatalError("init() has not been implemented")
-    }
-    
-    required convenience init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
     }
 }
 
@@ -54,3 +46,4 @@ extension GWDemoTableViewCell: GWCellUpdata{
         })
     }
 }
+

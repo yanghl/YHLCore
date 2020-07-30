@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		086AB83C24D1625B0077CA2B /* MVVMViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 086AB83A24D1625B0077CA2B /* MVVMViewController.swift */; };
+		086AB83D24D1625B0077CA2B /* MVVMViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 086AB83B24D1625B0077CA2B /* MVVMViewController.xib */; };
+		086AB83F24D1A4B10077CA2B /* GWDrivingMapTimeSlideView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 086AB83E24D1A4B00077CA2B /* GWDrivingMapTimeSlideView.swift */; };
 		08749B6624BDE1190029623B /* mall.html in Resources */ = {isa = PBXBuildFile; fileRef = 08749B6224BDE1190029623B /* mall.html */; };
 		08749B6724BDE1190029623B /* MallViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08749B6324BDE1190029623B /* MallViewController.swift */; };
 		08749B6824BDE1190029623B /* GWJSBridge.js in Resources */ = {isa = PBXBuildFile; fileRef = 08749B6424BDE1190029623B /* GWJSBridge.js */; };
@@ -20,13 +23,16 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		086AB83A24D1625B0077CA2B /* MVVMViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVVMViewController.swift; sourceTree = "<group>"; };
+		086AB83B24D1625B0077CA2B /* MVVMViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MVVMViewController.xib; sourceTree = "<group>"; };
+		086AB83E24D1A4B00077CA2B /* GWDrivingMapTimeSlideView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GWDrivingMapTimeSlideView.swift; sourceTree = "<group>"; };
 		08749B6224BDE1190029623B /* mall.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = mall.html; sourceTree = "<group>"; };
 		08749B6324BDE1190029623B /* MallViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MallViewController.swift; sourceTree = "<group>"; };
 		08749B6424BDE1190029623B /* GWJSBridge.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = GWJSBridge.js; sourceTree = "<group>"; };
 		08749B6524BDE1190029623B /* GWWebViewBridgeRegister.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GWWebViewBridgeRegister.swift; sourceTree = "<group>"; };
 		1648C323A0902368B11416CD /* Pods-YHLCore_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YHLCore_Example.release.xcconfig"; path = "Target Support Files/Pods-YHLCore_Example/Pods-YHLCore_Example.release.xcconfig"; sourceTree = "<group>"; };
 		45BE1C08A6BB650AE45FB0A2 /* Pods-YHLCore_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YHLCore_Example.debug.xcconfig"; path = "Target Support Files/Pods-YHLCore_Example/Pods-YHLCore_Example.debug.xcconfig"; sourceTree = "<group>"; };
-		607FACD01AFB9204008FA782 /* YHLCore_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YHLCore_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		607FACD01AFB9204008FA782 /* 牛逼的应用.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "牛逼的应用.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACD41AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FACD51AFB9204008FA782 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		607FACD71AFB9204008FA782 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -54,6 +60,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		086AB83524D161EA0077CA2B /* MVVM */ = {
+			isa = PBXGroup;
+			children = (
+				086AB83A24D1625B0077CA2B /* MVVMViewController.swift */,
+				086AB83B24D1625B0077CA2B /* MVVMViewController.xib */,
+				086AB83E24D1A4B00077CA2B /* GWDrivingMapTimeSlideView.swift */,
+			);
+			path = MVVM;
+			sourceTree = "<group>";
+		};
 		08749B6124BDE1190029623B /* H5 */ = {
 			isa = PBXGroup;
 			children = (
@@ -88,7 +104,7 @@
 		607FACD11AFB9204008FA782 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				607FACD01AFB9204008FA782 /* YHLCore_Example.app */,
+				607FACD01AFB9204008FA782 /* 牛逼的应用.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -96,6 +112,7 @@
 		607FACD21AFB9204008FA782 /* Example for YHLCore */ = {
 			isa = PBXGroup;
 			children = (
+				086AB83524D161EA0077CA2B /* MVVM */,
 				08749B6124BDE1190029623B /* H5 */,
 				607FACD51AFB9204008FA782 /* AppDelegate.swift */,
 				607FACD71AFB9204008FA782 /* ViewController.swift */,
@@ -156,7 +173,7 @@
 			);
 			name = YHLCore_Example;
 			productName = YHLCore;
-			productReference = 607FACD01AFB9204008FA782 /* YHLCore_Example.app */;
+			productReference = 607FACD01AFB9204008FA782 /* 牛逼的应用.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -171,6 +188,7 @@
 				TargetAttributes = {
 					607FACCF1AFB9204008FA782 = {
 						CreatedOnToolsVersion = 6.3.1;
+						DevelopmentTeam = QNW5ZM4FUA;
 						LastSwiftMigration = 0900;
 					};
 				};
@@ -199,6 +217,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				086AB83D24D1625B0077CA2B /* MVVMViewController.xib in Resources */,
 				607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */,
 				08749B6824BDE1190029623B /* GWJSBridge.js in Resources */,
 				607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */,
@@ -232,6 +251,7 @@
 				"${BUILT_PRODUCTS_DIR}/NVActivityIndicatorView/NVActivityIndicatorView.framework",
 				"${BUILT_PRODUCTS_DIR}/R.swift.Library/Rswift.framework",
 				"${BUILT_PRODUCTS_DIR}/RZCarPlateNoTextField/RZCarPlateNoTextField.framework",
+				"${BUILT_PRODUCTS_DIR}/Result/Result.framework",
 				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
 				"${BUILT_PRODUCTS_DIR}/RxRelay/RxRelay.framework",
 				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
@@ -264,6 +284,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/NVActivityIndicatorView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Rswift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RZCarPlateNoTextField.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Result.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxRelay.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
@@ -314,8 +335,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				607FACD81AFB9204008FA782 /* ViewController.swift in Sources */,
+				086AB83C24D1625B0077CA2B /* MVVMViewController.swift in Sources */,
 				08749B6924BDE1190029623B /* GWWebViewBridgeRegister.swift in Sources */,
 				607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */,
+				086AB83F24D1A4B10077CA2B /* GWDrivingMapTimeSlideView.swift in Sources */,
 				08749B6724BDE1190029623B /* MallViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -446,12 +469,13 @@
 			baseConfigurationReference = 45BE1C08A6BB650AE45FB0A2 /* Pods-YHLCore_Example.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = QNW5ZM4FUA;
 				INFOPLIST_FILE = YHLCore/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MODULE_NAME = ExampleApp;
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.$(PRODUCT_NAME:rfc1034identifier)";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = eil.xNote;
+				PRODUCT_NAME = "牛逼的应用";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 				SWIFT_VERSION = 4.0;
 			};
@@ -462,12 +486,13 @@
 			baseConfigurationReference = 1648C323A0902368B11416CD /* Pods-YHLCore_Example.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = QNW5ZM4FUA;
 				INFOPLIST_FILE = YHLCore/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MODULE_NAME = ExampleApp;
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.$(PRODUCT_NAME:rfc1034identifier)";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = eil.xNote;
+				PRODUCT_NAME = "牛逼的应用";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 				SWIFT_VERSION = 4.0;
 			};

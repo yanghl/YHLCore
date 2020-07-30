@@ -15,6 +15,7 @@ public protocol GWCellUpdata {
 }
 //
 public protocol GWCellConfig {
+    
     var reuseIdentifier: String { get }
     var className: AnyClass { get }
     var cacheHeight:CGFloat { get set}

@@ -9,6 +9,14 @@
 #if canImport(CoreGraphics)
 import CoreGraphics
 
+#if canImport(UIKit)
+import UIKit
+#endif
+
+#if canImport(Cocoa)
+import Cocoa
+#endif
+
 // MARK: - Methods
 public extension CGSize {
 
@@ -37,7 +45,7 @@ public extension CGSize {
     ///     let rect = CGSize(width: 120, height: 80)
     ///     let parentRect  = CGSize(width: 100, height: 50)
     ///     let newRect = rect.aspectFit(to: parentRect)
-    ///     // newRect.width = 75 , newRect = 50
+    ///     //newRect.width = 75 , newRect = 50
     ///
     /// - Parameter boundingSize: bounding size to fit self to.
     /// - Returns: self fitted into given bounding size
@@ -51,7 +59,7 @@ public extension CGSize {
     ///     let rect = CGSize(width: 20, height: 120)
     ///     let parentRect  = CGSize(width: 100, height: 60)
     ///     let newRect = rect.aspectFit(to: parentRect)
-    ///     // newRect.width = 100 , newRect = 60
+    ///     //newRect.width = 100 , newRect = 60
     ///
     /// - Parameter boundingSize: bounding size to fill self to.
     /// - Returns: self filled into given bounding size
@@ -72,7 +80,7 @@ public extension CGSize {
     ///     let sizeA = CGSize(width: 5, height: 10)
     ///     let sizeB = CGSize(width: 3, height: 4)
     ///     let result = sizeA + sizeB
-    ///     // result = CGSize(width: 8, height: 14)
+    ///     //result = CGSize(width: 8, height: 14)
     ///
     /// - Parameters:
     ///   - lhs: CGSize to add to.
@@ -87,7 +95,7 @@ public extension CGSize {
     ///     let sizeA = CGSize(width: 5, height: 10)
     ///     let sizeB = CGSize(width: 3, height: 4)
     ///     sizeA += sizeB
-    ///     // sizeA = CGPoint(width: 8, height: 14)
+    ///     //sizeA = CGPoint(width: 8, height: 14)
     ///
     /// - Parameters:
     ///   - lhs: self
@@ -102,7 +110,7 @@ public extension CGSize {
     ///     let sizeA = CGSize(width: 5, height: 10)
     ///     let sizeB = CGSize(width: 3, height: 4)
     ///     let result = sizeA - sizeB
-    ///     // result = CGSize(width: 2, height: 6)
+    ///     //result = CGSize(width: 2, height: 6)
     ///
     /// - Parameters:
     ///   - lhs: CGSize to subtract from.
@@ -117,7 +125,7 @@ public extension CGSize {
     ///     let sizeA = CGSize(width: 5, height: 10)
     ///     let sizeB = CGSize(width: 3, height: 4)
     ///     sizeA -= sizeB
-    ///     // sizeA = CGPoint(width: 2, height: 6)
+    ///     //sizeA = CGPoint(width: 2, height: 6)
     ///
     /// - Parameters:
     ///   - lhs: self
@@ -132,7 +140,7 @@ public extension CGSize {
     ///     let sizeA = CGSize(width: 5, height: 10)
     ///     let sizeB = CGSize(width: 3, height: 4)
     ///     let result = sizeA * sizeB
-    ///     // result = CGSize(width: 15, height: 40)
+    ///     //result = CGSize(width: 15, height: 40)
     ///
     /// - Parameters:
     ///   - lhs: CGSize to multiply.
@@ -146,7 +154,7 @@ public extension CGSize {
     ///
     ///     let sizeA = CGSize(width: 5, height: 10)
     ///     let result = sizeA * 5
-    ///     // result = CGSize(width: 25, height: 50)
+    ///     //result = CGSize(width: 25, height: 50)
     ///
     /// - Parameters:
     ///   - lhs: CGSize to multiply.
@@ -160,7 +168,7 @@ public extension CGSize {
     ///
     ///     let sizeA = CGSize(width: 5, height: 10)
     ///     let result = 5 * sizeA
-    ///     // result = CGSize(width: 25, height: 50)
+    ///     //result = CGSize(width: 25, height: 50)
     ///
     /// - Parameters:
     ///   - scalar: scalar value.
@@ -175,7 +183,7 @@ public extension CGSize {
     ///     let sizeA = CGSize(width: 5, height: 10)
     ///     let sizeB = CGSize(width: 3, height: 4)
     ///     sizeA *= sizeB
-    ///     // result = CGSize(width: 15, height: 40)
+    ///     //result = CGSize(width: 15, height: 40)
     ///
     /// - Parameters:
     ///   - lhs: self.
@@ -189,7 +197,7 @@ public extension CGSize {
     ///
     ///     let sizeA = CGSize(width: 5, height: 10)
     ///     sizeA *= 3
-    ///     // result = CGSize(width: 15, height: 30)
+    ///     //result = CGSize(width: 15, height: 30)
     ///
     /// - Parameters:
     ///   - lhs: self.

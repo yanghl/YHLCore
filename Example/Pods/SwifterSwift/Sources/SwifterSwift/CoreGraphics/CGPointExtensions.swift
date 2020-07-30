@@ -9,6 +9,14 @@
 #if canImport(CoreGraphics)
 import CoreGraphics
 
+#if canImport(UIKit)
+import UIKit
+#endif
+
+#if canImport(Cocoa)
+import Cocoa
+#endif
+
 // MARK: - Methods
 public extension CGPoint {
 
@@ -17,7 +25,7 @@ public extension CGPoint {
     ///     let point1 = CGPoint(x: 10, y: 10)
     ///     let point2 = CGPoint(x: 30, y: 30)
     ///     let distance = point1.distance(from: point2)
-    ///     // distance = 28.28
+    ///     //distance = 28.28
     ///
     /// - Parameter point: CGPoint to get distance from.
     /// - Returns: Distance between self and given CGPoint.
@@ -30,7 +38,7 @@ public extension CGPoint {
     ///     let point1 = CGPoint(x: 10, y: 10)
     ///     let point2 = CGPoint(x: 30, y: 30)
     ///     let distance = CGPoint.distance(from: point2, to: point1)
-    ///     // distance = 28.28
+    ///     //Distance = 28.28
     ///
     /// - Parameters:
     ///   - point1: first CGPoint.
@@ -51,7 +59,7 @@ public extension CGPoint {
     ///     let point1 = CGPoint(x: 10, y: 10)
     ///     let point2 = CGPoint(x: 30, y: 30)
     ///     let point = point1 + point2
-    ///     // point = CGPoint(x: 40, y: 40)
+    ///     //point = CGPoint(x: 40, y: 40)
     ///
     /// - Parameters:
     ///   - lhs: CGPoint to add to.
@@ -66,7 +74,7 @@ public extension CGPoint {
     ///     let point1 = CGPoint(x: 10, y: 10)
     ///     let point2 = CGPoint(x: 30, y: 30)
     ///     point1 += point2
-    ///     // point1 = CGPoint(x: 40, y: 40)
+    ///     //point1 = CGPoint(x: 40, y: 40)
     ///
     /// - Parameters:
     ///   - lhs: self
@@ -81,7 +89,7 @@ public extension CGPoint {
     ///     let point1 = CGPoint(x: 10, y: 10)
     ///     let point2 = CGPoint(x: 30, y: 30)
     ///     let point = point1 - point2
-    ///     // point = CGPoint(x: -20, y: -20)
+    ///     //point = CGPoint(x: -20, y: -20)
     ///
     /// - Parameters:
     ///   - lhs: CGPoint to subtract from.
@@ -96,7 +104,7 @@ public extension CGPoint {
     ///     let point1 = CGPoint(x: 10, y: 10)
     ///     let point2 = CGPoint(x: 30, y: 30)
     ///     point1 -= point2
-    ///     // point1 = CGPoint(x: -20, y: -20)
+    ///     //point1 = CGPoint(x: -20, y: -20)
     ///
     /// - Parameters:
     ///   - lhs: self
@@ -110,7 +118,7 @@ public extension CGPoint {
     ///
     ///     let point1 = CGPoint(x: 10, y: 10)
     ///     let scalar = point1 * 5
-    ///     // scalar = CGPoint(x: 50, y: 50)
+    ///     //scalar = CGPoint(x: 50, y: 50)
     ///
     /// - Parameters:
     ///   - point: CGPoint to multiply.
@@ -124,7 +132,7 @@ public extension CGPoint {
     ///
     ///     let point1 = CGPoint(x: 10, y: 10)
     ///     point *= 5
-    ///     // point1 = CGPoint(x: 50, y: 50)
+    ///     //point1 = CGPoint(x: 50, y: 50)
     ///
     /// - Parameters:
     ///   - point: self.
@@ -139,7 +147,7 @@ public extension CGPoint {
     ///
     ///     let point1 = CGPoint(x: 10, y: 10)
     ///     let scalar = 5 * point1
-    ///     // scalar = CGPoint(x: 50, y: 50)
+    ///     //scalar = CGPoint(x: 50, y: 50)
     ///
     /// - Parameters:
     ///   - scalar: scalar value.

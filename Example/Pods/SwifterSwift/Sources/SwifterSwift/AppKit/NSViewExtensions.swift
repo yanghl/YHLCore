@@ -6,8 +6,8 @@
 //  Copyright © 2017 SwifterSwift
 //
 
-#if canImport(AppKit) && !targetEnvironment(macCatalyst)
-import AppKit
+#if canImport(Cocoa)
+import Cocoa
 
 // MARK: - Properties
 public extension NSView {

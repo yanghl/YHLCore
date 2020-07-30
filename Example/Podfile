@@ -1,3 +1,4 @@
+source 'https://gitlab.btpoc.com/app/ios/componentrepo.git'   # 私有库
 
 use_frameworks!
 use_modular_headers!

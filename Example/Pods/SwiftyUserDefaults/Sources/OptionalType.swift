@@ -22,28 +22,14 @@
 // SOFTWARE.
 //
 
-protocol OptionalTypeCheck {
-    var isNil: Bool { get }
-}
-
 public protocol OptionalType {
     associatedtype Wrapped
     var wrapped: Wrapped? { get }
-
-    static var empty: Self { get }
 }
 
-extension Optional: OptionalType, OptionalTypeCheck {
+extension Optional: OptionalType {
 
     public var wrapped: Wrapped? {
         return self
-    }
-
-    public static var empty: Optional {
-        return nil
-    }
-
-    var isNil: Bool {
-        return self == nil
     }
 }
