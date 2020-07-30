@@ -45,7 +45,7 @@ open class GWTableViewDataSource: NSObject,UITableViewDataSource {
     
     public func itemAtIndexPath(indexPath:IndexPath) -> GWCellConfig? {
         if items.count>indexPath.section {
-            var models = items[indexPath.section]
+            let models = items[indexPath.section]
             if models.count>indexPath.row {
                 return models[indexPath.row]
             }
@@ -53,7 +53,7 @@ open class GWTableViewDataSource: NSObject,UITableViewDataSource {
         return nil
     }
     
-    public func itemAtIndexPath<T>(indexPath:IndexPath,cell:T.Type) -> CellConfigurator<T>? {
+    public func itemAtIndexPath<T>(indexPath:IndexPath) -> CellConfigurator<T>? {
         let config = self.itemAtIndexPath(indexPath: indexPath)
         if let model = config as? CellConfigurator<T> {
             return model

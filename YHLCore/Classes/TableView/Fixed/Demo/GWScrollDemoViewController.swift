@@ -38,8 +38,9 @@ class GWScrollDemoViewController: GWDemoViewController {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let cofig = self.dataSource?.itemAtIndexPath(indexPath: indexPath)
-        
-        cofig
+        if let item:CellConfigurator<GWDemoSubTableViewCell> = self.dataSource?.itemAtIndexPath(indexPath: indexPath) {
+            let height = item.viewData.cacheHeight
+            print(height)
+        }
     }
 }
