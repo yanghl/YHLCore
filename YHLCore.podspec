@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
     s.name             = 'YHLCore'
-    s.version          = '0.1.6'
+    s.version          = '0.1.7'
     s.summary          = 'A short description of YHLCore.'
     s.description      = <<-DESC
                             TODO: Add long description of the pod here.
