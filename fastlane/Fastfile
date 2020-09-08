@@ -59,11 +59,40 @@ lines = IO.readlines(path).map do |line|
 `git push`
 
 
-	`git stash pop stash@{0}`
-	
-	puts "==========#{path}"
+if git_tag_exists(tag: tagNum)
+remove_git_tag(tagNum: tagNum)
+end
 
-	puts podspec_name
+add_git_tag(
+  tag: tagNum
+)
+
+push_git_tags
+
+
+	`git stash pop stash@{0}`
+
+
+#移动podspec文件
+
+repoPath = File.expand_path("../..", current_dir)+"/seanRepo/YHLCore/"+tagNum
+
+
+Dir.mkdir(repoPath)
+FileUtils.cp(path , repoPath)
+
+Dir.chdir(File.expand_path("../..", current_dir)+"/seanRepo")
+	
+
+`git add .`
+
+`git commit -m "发版" .`
+
+`git push`
+
+	puts "==========#{repoPath}"
+
+	
 
 
   end
