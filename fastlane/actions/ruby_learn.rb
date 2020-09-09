@@ -7,7 +7,14 @@ module Fastlane
     class RubyLearnAction < Action
       def self.run(params)
         # 最终要执行的东西，在这里执行
+        #
 
+        remove_git_tag(tagNum: "0.1.1")
+        if git_tag_exists(tag: "0.1.3")
+          remove_git_tag(tagNum: "0.1.3")
+        end
+
+        return
         # 1、获取所有输入的参数
         # tag 的名称 如 0.1.0
         tageName = params[:tag]
