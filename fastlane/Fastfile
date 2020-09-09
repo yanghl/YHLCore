@@ -1,0 +1,30 @@
+require 'fileutils'
+
+default_platform(:ios)
+
+platform :ios do
+  lane :update do |options|
+
+  tagNum = options[:version]
+
+if git_tag_exists(tag: tagNum)
+  UI.message("发现 tag:#{tagNum} 存在，即将执行删除动作 🚀")
+  # 下面的两种写法都可以
+  ruby_learn(tag:tagNum,isRL:true,isRR:true)
+  #remove_tag(tag:tagNum)
+end
+
+  end
+end
+
+
+def podspec_name 
+  podspecName = File.basename(File.expand_path(Dir.pwd), Dir.getwd)
+  Dir.children("..").each{|x| 
+    fileName = x.sub!(/\..*/,"")
+    if podspecName.casecmp? fileName
+      podspecName = fileName
+    end
+  }
+  podspecName
+end

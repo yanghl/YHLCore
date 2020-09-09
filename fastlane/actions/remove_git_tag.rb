@@ -16,12 +16,13 @@ module Fastlane
         if rmLocalTag
           # 删除本地标签
           # git tag -d 标签名称
-          command << "git tag -d #{tagNum}"
+          #`git tag -d #{tagNum}`
+          #command << "git tag -d #{tagNum}"
         end
         if rmRemoteTag
           # 删除远程标签
           # git push origin :标签名称
-          command << "git push origin :#{tagNum}"
+          #command << "git push origin :#{tagNum}"
         end
 
         result = Actions.sh(command.join('&'))
@@ -49,21 +50,21 @@ module Fastlane
         # Define all options your action supports. 
         
         # Below a few examples
-        [ 
-          FastlaneCore::ConfigItem.new(key: :tagNum,
-                                       description: "输入即将删除的tag",
-                                       is_string: true),
-          FastlaneCore::ConfigItem.new(key: :rmLocalTag,
-                                       description: "是否删除本地tag",
-                                       optional:true,
-                                       is_string: false,
-                                       default_value: true),
-          FastlaneCore::ConfigItem.new(key: :rmRemoteTag,
-                                       description: "是否删除远程tag",
-                                       optional:true,
-                                       is_string: false,
-                                       default_value: true)
-        ]
+        # [
+        #   FastlaneCore::ConfigItem.new(key: :tagNum,
+        #                                description: "输入即将删除的tag",
+        #                                is_string: true),
+        #   FastlaneCore::ConfigItem.new(key: :rmLocalTag,
+        #                                description: "是否删除本地tag",
+        #                                optional:true,
+        #                                is_string: false,
+        #                                default_value: true),
+        #   FastlaneCore::ConfigItem.new(key: :rmRemoteTag,
+        #                                description: "是否删除远程tag",
+        #                                optional:true,
+        #                                is_string: false,
+        #                                default_value: true)
+        # ]
       end
 
       def self.output

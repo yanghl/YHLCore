@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites>
+  <testsuite name="fastlane.lanes">
+    
+    
+    
+      
+      <testcase classname="fastlane.lanes" name="0: default_platform" time="0.008398">
+        
+      </testcase>
+    
+      
+      <testcase classname="fastlane.lanes" name="1: update_fastlane" time="0.156925">
+        
+      </testcase>
+    
+      
+      <testcase classname="fastlane.lanes" name="2: git_tag_exists" time="0.01829">
+        
+      </testcase>
+    
+      
+      <testcase classname="fastlane.lanes" name="3: ruby_learn" time="6.264572">
+        
+      </testcase>
+    
+  </testsuite>
+</testsuites>
