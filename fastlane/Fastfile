@@ -8,6 +8,18 @@ platform :ios do
 
 tagNum = options[:version]
 
+
+Dir.chdir(Dir.pwd) do
+
+puts "aaaaaaaa"
+puts __FILE__
+puts Dir.pwd
+puts "aaaaaaaa"
+
+add_git_tag(tag: tagNum)
+
+end
+
 	current_dir = File.dirname(File.expand_path(__FILE__))
 
         curpath = File.expand_path("..", current_dir)
@@ -43,18 +55,6 @@ lines = IO.readlines(path).map do |line|
 
 `git push`
 
-
-
-Dir.chdir(Dir.pwd) do
-
-puts "aaaaaaaa"
-puts __FILE__
-puts Dir.pwd
-puts "aaaaaaaa"
-
-add_git_tag(tag: tagNum)
-
-end
 
 
 #if git_tag_exists(tag: tagNum)
