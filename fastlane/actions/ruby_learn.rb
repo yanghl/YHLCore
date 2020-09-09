@@ -51,9 +51,9 @@ module Fastlane
         puts "aaaaaa"
         puts Dir.pwd
         puts "aaaaaa"
-        
-        if git_tag_exists(tag: tageName)
-          remove_git_tag(tagNum: tageName)
+
+        if git_tag_exists(tag: 0.1.3)
+          remove_git_tag(tagNum: 0.1.3)
         end
 
         #add_git_tag(tag: tagNum)
