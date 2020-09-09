@@ -7,7 +7,7 @@ platform :ios do
   lane :update do |options|
 
 tagNum = options[:version]
-add_git_tag(tag: tagNum)
+
 	current_dir = File.dirname(File.expand_path(__FILE__))
 
         curpath = File.expand_path("..", current_dir)
@@ -46,9 +46,10 @@ lines = IO.readlines(path).map do |line|
 
 if git_tag_exists(tag: tagNum)
 remove_git_tag(tagNum: tagNum)
+add_git_tag(tag: tagNum)
 end
 
-add_git_tag(tag: tagNum)
+#add_git_tag(tag: tagNum)
 
 #push_git_tags
 
