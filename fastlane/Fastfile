@@ -43,13 +43,19 @@ lines = IO.readlines(path).map do |line|
 
 `git push`
 
+
+
+Dir.chdir(Dir.pwd) do
+
 puts "aaaaaaaa"
 puts __FILE__
 puts Dir.pwd
 puts "aaaaaaaa"
 
-Dir.chdir(Dir.pwd)
 add_git_tag(tag: tagNum)
+
+end
+
 
 #if git_tag_exists(tag: tagNum)
 #remove_git_tag(tagNum: tagNum)
