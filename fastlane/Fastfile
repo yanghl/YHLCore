@@ -9,22 +9,25 @@ platform :ios do
 tagNum = options[:version]
 
 
-Dir.chdir(Dir.pwd) do
 
-puts "aaaaaaaa"
-puts __FILE__
-puts Dir.pwd
-puts "aaaaaaaa"
-
-add_git_tag(tag: tagNum)
-
-end
 
 	current_dir = File.dirname(File.expand_path(__FILE__))
 
         curpath = File.expand_path("..", current_dir)
 
 	Dir.chdir(curpath)
+
+	Dir.chdir(current_dir) do
+
+    puts "aaaaaaaa"
+    puts __FILE__
+    puts File.expand_path(__FILE__)
+    puts "aaaaaaaa"
+
+    add_git_tag(tag: tagNum)
+
+    end
+
 
 	#`git stash save "yanghl_temp"`
 
