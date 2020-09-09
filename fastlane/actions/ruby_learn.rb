@@ -48,7 +48,10 @@ module Fastlane
 
         `git push`
 
-
+        puts "aaaaaa"
+        puts Dir.pwd
+        puts "aaaaaa"
+        
         if git_tag_exists(tag: tageName)
           remove_git_tag(tagNum: tageName)
         end
