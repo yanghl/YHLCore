@@ -47,6 +47,8 @@ puts "aaaaaaaa"
 puts __FILE__
 puts Dir.pwd
 puts "aaaaaaaa"
+
+Dir.chdir(Dir.pwd)
 add_git_tag(tag: tagNum)
 
 #if git_tag_exists(tag: tagNum)
