@@ -7,7 +7,7 @@ platform :ios do
   lane :update do |options|
 
 tagNum = options[:version]
-
+add_git_tag(tag: tagNum)
 	current_dir = File.dirname(File.expand_path(__FILE__))
 
         curpath = File.expand_path("..", current_dir)
