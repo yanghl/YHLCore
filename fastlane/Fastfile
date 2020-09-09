@@ -14,7 +14,7 @@ tagNum = options[:version]
 
 	Dir.chdir(curpath)
 
-	`git stash save "yanghl_temp"`
+	#`git stash save "yanghl_temp"`
 
 	podspecName = podspec_name
 
@@ -53,7 +53,7 @@ add_git_tag(tag: tagNum)
 #push_git_tags
 
 
-	`git stash pop stash@{0}`
+	#`git stash pop stash@{0}`
 
 
 #移动podspec文件
