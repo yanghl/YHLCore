@@ -11,30 +11,77 @@ module Fastlane
         # 1、获取所有输入的参数
         # tag 的名称 如 0.1.0
         tageName = params[:tag]
-        # 是否需要删除本地标签
-        isRemoveLocationTag = params[:isRL]
-        # 是否需要删除远程标签
-        isRemoveRemoteTag = params[:isRR]
 
-        # 2、定义一个数组，准备往数组里面添加相应的命令
-        cmds = []
+        current_dir = File.dirname(File.expand_path(__FILE__))
 
-        # 删除本地的标签
-        # git tag -d 标签名称
-        if isRemoveLocationTag
-          cmds << "git tag -d #{tageName}"
+        curpath = File.expand_path("..", current_dir)
+
+        Dir.chdir(curpath)
+
+        `git stash save "yanghl_temp"`
+
+        podspecName = File.basename(File.expand_path(Dir.pwd), Dir.getwd)
+        Dir.children("..").each{|x|
+          fileName = x.sub!(/\..*/,"")
+          if podspecName.casecmp? fileName
+            podspecName = fileName
+          end
+        }
+
+        path = curpath+"/#{podspecName}.podspec"
+
+        return unless File.exists? path
+
+
+        lines = IO.readlines(path).map do |line|
+          if line.include? "s.version          ="
+
+            line = "    s.version          = '#{tageName}'"
+          else
+
+            line
+          end
+        end
+        File.open(path, 'w') do |file|
+          file.puts lines
         end
 
-        # 删除远程标签
-        # git push origin :标签名称
-        if isRemoveRemoteTag
-          cmds << "git push origin :#{tageName}"
+
+        `git add .`
+
+        `git commit -m "发版" .`
+
+        `git push`
+
+
+        if git_tag_exists(tag: tageName)
+          remove_git_tag(tagNum: tageName)
         end
 
-        # 3、执行数组里面的所有的命令
-        result = Actions.sh(cmds.join('&'))
-        UI.message("执行完毕 remove_tag的操作 🚀")
-        return result
+        #add_git_tag(tag: tagNum)
+
+        #push_git_tags
+
+
+        `git stash pop stash@{0}`
+
+
+        #移动podspec文件
+
+        repoPath = File.expand_path("../..", current_dir)+"/seanRepo/YHLCore/"+tageName
+
+
+        Dir.mkdir(repoPath)
+        FileUtils.cp(path , repoPath)
+
+        Dir.chdir(File.expand_path("../..", current_dir)+"/seanRepo")
+
+
+        `git add .`
+
+        `git commit -m "发版" .`
+
+        `git push`
 
       end
 

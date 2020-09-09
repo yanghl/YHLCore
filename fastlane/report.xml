@@ -5,22 +5,22 @@
     
     
       
-      <testcase classname="fastlane.lanes" name="0: default_platform" time="0.008398">
+      <testcase classname="fastlane.lanes" name="0: default_platform" time="0.006429">
         
       </testcase>
     
       
-      <testcase classname="fastlane.lanes" name="1: update_fastlane" time="0.156925">
+      <testcase classname="fastlane.lanes" name="1: update_fastlane" time="0.154695">
         
       </testcase>
     
       
-      <testcase classname="fastlane.lanes" name="2: git_tag_exists" time="0.01829">
+      <testcase classname="fastlane.lanes" name="2: git_tag_exists" time="0.015943">
         
       </testcase>
     
       
-      <testcase classname="fastlane.lanes" name="3: ruby_learn" time="6.264572">
+      <testcase classname="fastlane.lanes" name="3: remove_git_tag" time="5.959141">
         
       </testcase>
     
