@@ -48,7 +48,7 @@ if git_tag_exists(tag: tagNum)
 remove_git_tag(tagNum: tagNum)
 end
 
-#add_git_tag(tag: tagNum)
+add_git_tag(tag: tagNum)
 
 #push_git_tags
 
