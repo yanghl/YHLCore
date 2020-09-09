@@ -11,18 +11,7 @@ module Fastlane
         # 1、获取所有输入的参数
         # tag 的名称 如 0.1.0
         tageName = params[:tag]
-
-        current_dir = File.dirname(File.expand_path(__FILE__))
-
-        puts "aaaaaaa"
-        puts Dir.pwd
-        puts Dir.getwd
-        puts File.basename(File.expand_path(Dir.pwd), Dir.getwd)
-        puts "aaaaaaa"
-
-        curpath = File.expand_path("..", current_dir)
-
-        Dir.chdir(curpath)
+        Dir.chdir(Dir.pwd)
 
         `git stash save "yanghl_temp"`
 
@@ -34,7 +23,7 @@ module Fastlane
           end
         }
 
-        path = curpath+"/#{podspecName}.podspec"
+        path = Dir.pwd+"/#{podspecName}.podspec"
 
         return unless File.exists? path
 
@@ -74,14 +63,20 @@ module Fastlane
 
         #移动podspec文件
 
-        repoPath = File.expand_path("../..", current_dir)+"/seanRepo/YHLCore/"+tageName
+        repoPath = File.expand_path("..", Dir.pwd)+"/seanRepo/YHLCore/"+tageName
 
+        puts "bbbbbb"
+        puts repoPath
+        puts "bbbb"
 
         Dir.mkdir(repoPath)
         FileUtils.cp(path , repoPath)
 
-        Dir.chdir(File.expand_path("../..", current_dir)+"/seanRepo")
+        Dir.chdir(Dir.pwd)
 
+        puts "cccccccc"
+        puts Dir.pwd
+        puts "ccccccc"
 
         `git add .`
 

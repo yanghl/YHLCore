@@ -5,17 +5,17 @@
     
     
       
-      <testcase classname="fastlane.lanes" name="0: default_platform" time="0.005939">
+      <testcase classname="fastlane.lanes" name="0: default_platform" time="0.006332">
         
       </testcase>
     
       
-      <testcase classname="fastlane.lanes" name="1: update_fastlane" time="0.150424">
+      <testcase classname="fastlane.lanes" name="1: update_fastlane" time="0.150027">
         
       </testcase>
     
       
-      <testcase classname="fastlane.lanes" name="2: ruby_learn" time="0.026908">
+      <testcase classname="fastlane.lanes" name="2: ruby_learn" time="0.026609">
         
       </testcase>
     
