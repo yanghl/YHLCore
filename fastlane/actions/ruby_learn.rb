@@ -15,8 +15,11 @@ module Fastlane
         current_dir = File.dirname(File.expand_path(__FILE__))
 
         puts "aaaaaaa"
-        puts current_dir
-        
+        puts Dir.pwd
+        puts Dir.getwd
+        puts File.basename(File.expand_path(Dir.pwd), Dir.getwd)
+        puts "aaaaaaa"
+
         curpath = File.expand_path("..", current_dir)
 
         Dir.chdir(curpath)
