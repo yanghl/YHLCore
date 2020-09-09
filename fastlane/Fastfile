@@ -17,19 +17,7 @@ tagNum = options[:version]
 
 	Dir.chdir(curpath)
 
-	Dir.chdir(current_dir) do
-
-    puts "aaaaaaaa"
-    puts __FILE__
-    puts File.expand_path(__FILE__)
-    puts "aaaaaaaa"
-
-    add_git_tag(tag: tagNum)
-
-    end
-
-
-	#`git stash save "yanghl_temp"`
+	`git stash save "yanghl_temp"`
 
 	podspecName = podspec_name
 
@@ -58,15 +46,15 @@ lines = IO.readlines(path).map do |line|
 
 `git push`
 
+Dir.chdir(current_dir)
+if git_tag_exists(tag: tagNum)
+remove_git_tag(tagNum: tagNum)
+end
+add_git_tag(tag: tagNum)
+push_git_tags
 
 
-#if git_tag_exists(tag: tagNum)
-#remove_git_tag(tagNum: tagNum)
-#end
-#push_git_tags
-
-
-	#`git stash pop stash@{0}`
+	`git stash pop stash@{0}`
 
 
 #移动podspec文件
