@@ -20,7 +20,7 @@ or alternatively using `brew install fastlane`
 ```
 fastlane ios update
 ```
-
+Description of what the lane does
 
 ----
 
