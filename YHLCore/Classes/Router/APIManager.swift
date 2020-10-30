@@ -9,7 +9,7 @@ import URLNavigator
 
 public enum YHLAPPScheme : String {
     case common = "common"//项目1
-    case project = "project"//项目1
+    case project = "YHLLearn"//项目1
 }
 
 public protocol YHLNavProtocol {
