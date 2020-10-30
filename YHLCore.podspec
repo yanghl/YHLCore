@@ -48,7 +48,6 @@ Pod::Spec.new do |s|
     s.dependency 'IQKeyboardManagerSwift'
     s.dependency 'UITableView+FDTemplateLayoutCell'
     s.dependency 'SKPhotoBrowser'
-    s.dependency 'GPUImage'
     s.dependency 'RZCarPlateNoTextField'
     s.dependency 'URLNavigator'
     s.dependency 'WKWebViewJavascriptBridge'
