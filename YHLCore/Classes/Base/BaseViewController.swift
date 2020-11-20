@@ -41,6 +41,13 @@ open class BaseViewController: UIViewController,CommonInitProtocol {
         super.init(coder: coder)
     }
     
+    /// xib 初始化 携带参数
+    convenience public init(bundle nibBundleOrNil: Bundle?, param:[String:Any]?) {
+        self.init(nibName: nil, bundle: nibBundleOrNil)
+        self.title = param?["title"] as? String
+        self.params = param
+    }
+    
     /// xib 初始化
     override public init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         self.navigator = YHLNavigator.shared

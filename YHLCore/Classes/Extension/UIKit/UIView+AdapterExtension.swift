@@ -2,7 +2,7 @@
 //  UIView+AdapterExtension.swift
 //  Alamofire
 //
-//  Created by beantechs on 2020/1/13.
+//  Created by on 2020/1/13.
 //
 
 import UIKit

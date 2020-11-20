@@ -3,7 +3,7 @@
 //  Test
 //
 //  Created by yan on 2020/1/7.
-//  Copyright © 2020 beantechs. All rights reserved.
+//  Copyright © 2020 All rights reserved.
 //
 
 import UIKit
