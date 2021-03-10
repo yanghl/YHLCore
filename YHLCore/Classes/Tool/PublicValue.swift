@@ -8,6 +8,7 @@
 import Foundation
 import UIKit
 
+//测试
 
 /// 当前屏幕宽度
 public let kScreenWidth = UIScreen.main.bounds.size.width
